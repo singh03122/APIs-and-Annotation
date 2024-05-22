@@ -1,0 +1,127 @@
+Q3. What is the difference between Collections and Streams ? Explain with example.
+
+Ans:- Streams are sequences of data that allow for functional-style operations on collections of elements. They are designed to
+      work with data in a more declarative manner (i.e., what to do, not how to do it). Streams support operations like 
+      filtering,mapping, and reducing, and can be processed in parallel to improve performance.
+
+        Simple Program  for Streams:-
+
+      import java.util.ArrayList;
+      import java.util.List;
+      import java.util.stream.Collectors;
+
+       public class StreamsExample {
+       public static void main(String[] args) {
+        // Creating a list of integers
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+
+        // Using streams to filter and collect even numbers
+        List<Integer> evenNumbers = numbers.stream()
+                                           .filter(number -> number % 2 == 0)
+                                           .collect(Collectors.toList());
+
+        // Printing the list of even numbers
+        System.out.println("Even numbers: " + evenNumbers);
+
+        // Using streams to find the sum of all numbers
+        int sum = numbers.stream()
+                         .mapToInt(Integer::intValue)
+                         .sum();
+
+        // Printing the sum
+        System.out.println("Sum of all numbers: " + sum);
+    }
+}
+
+
+  COLLECTIONS :- Collections are data structures that hold and manage groups of objects. Examples include List, Set, Map, etc. 
+                 Collections are primarily used to store, retrieve, and manipulate data.
+
+         Simple Program for Collections :-
+       
+         import java.util.ArrayList;
+         import java.util.List;
+
+    public class CollectionsExample {
+    public static void main(String[] args) {
+        // Creating a list of integers
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+
+        // Iterating over the list and printing each number
+        for (Integer number : numbers) {
+            System.out.println(number);
+        }
+
+        // Removing an element from the list
+        numbers.remove(Integer.valueOf(3));
+
+        // Printing the modified list
+        System.out.println("Modified list: " + numbers);
+    }
+}
+
+Q4.What is Enums in java ? Explain with an example .
+
+Ans :-Enums in Java are a special data type that represents a collection of constants. Enums are used when you have a fixed set 
+      of related constants, such as days of the week, directions, states, etc. They provide a way to group these constants in a 
+      type-safe manner, preventing invalid values from being used.
+
+      Simple Program for Enums:-
+          public class EnumExample {
+    // Define the enum
+    public enum Day {
+        SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
+    }
+
+    public static void main(String[] args) {
+        // Use the enum
+        Day today = Day.WEDNESDAY;
+
+        // Print the current day
+        System.out.println("Today is " + today);
+
+        // Use switch case with enum
+        switch (today) {
+            case MONDAY:
+                System.out.println("Start of the work week.");
+                break;
+            case WEDNESDAY:
+                System.out.println("Midweek.");
+                break;
+            case FRIDAY:
+                System.out.println("End of the work week.");
+                break;
+            case SUNDAY:
+                System.out.println("Weekend.");
+                break;
+            default:
+                System.out.println("Another day.");
+                break;
+        }
+    }
+}
+
+Q5. What are in-built annotation in java ?
+
+Ans :-Annotations are a form of metadata that provide information about the code but do not directly affect the execution of the 
+      program. Java comes with several built-in annotations which are commonly used to provide meta-data about the program and 
+      influence the behavior of the Java compiler.
+
+     There are some in-built Annotation are :-
+      1. @Override
+      2. @Deprecated
+      3. @SuppressWarnings
+      4. @SafeVarargs
+      5. @FunctionalInterface
+           
+
